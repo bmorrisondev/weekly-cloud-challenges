@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "cloudchallengeakskub"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "cloudchallengeakskub"
+    spec:
+      containers:
+        - name: "cloudchallengeakskub"
+          image: "cloudchallengesregistry.azurecr.io/cloudchallengeakskub"
+          ports:
+          - containerPort: 80
