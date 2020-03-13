@@ -27,7 +27,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/." -f  "20.03.2 - Docker and AKS/WebApi/AksApi/AksApi/Dockerfile" -t cloudchallengesregistry.azurecr.io/cloudchallengeakskub:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/20.03.2 - Docker and AKS/WebApi/AksApi" -f  "20.03.2 - Docker and AKS/WebApi/AksApi/AksApi/Dockerfile" -t cloudchallengesregistry.azurecr.io/cloudchallengeakskub:${{ github.sha }}
         docker push cloudchallengesregistry.azurecr.io/cloudchallengeakskub:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
